@@ -7,7 +7,7 @@ class StackOverflow(scrapy.Spider):
     name = "stackoverflow"
 
     def start_requests(self):
-        """Формируем URLs и начинаем формировать запросы"""
+        """Формируем URLs и начинаем отправлять запросы"""
         urls = [
             f"https://ru.stackoverflow.com/questions/{i}/"
             for i in range(1, 1563318)
@@ -55,4 +55,5 @@ class StackOverflow(scrapy.Spider):
         yield {
             "title": response.css(".question-hyperlink::text")[0].get(),
             "posts": posts,
+            "url": response.url
         }
