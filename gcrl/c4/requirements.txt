@@ -1,0 +1,4 @@
+zstandard
+jsonlines
+pysimdjson
+datasets
