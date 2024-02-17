@@ -17,12 +17,12 @@ def generate_c4():
     for item in habr_dataset['train']:
         yield {"text": item['text_markdown'], "source": "habr"}
 
-    ru_wiki_dataset = load_dataset("wikipedia", "20220301.ru", cache_dir=cache_dir)
+    ru_wiki_dataset = load_dataset("danasone/wikipedia_ru", cache_dir=cache_dir)
 
     for item in ru_wiki_dataset['train']:
         yield {"text": item['text'], "source": "wikipedia-ru"}
 
-    en_wiki_dataset = load_dataset("wikipedia", "20220301.en", cache_dir=cache_dir)
+    en_wiki_dataset = load_dataset("vietgpt/wikipedia_en", cache_dir=cache_dir)
 
     for item in en_wiki_dataset['train']:
         yield {"text": item['text'], "source": "wikipedia-en"}
