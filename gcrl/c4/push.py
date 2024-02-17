@@ -72,4 +72,4 @@ def generate_c4():
 
 dataset = Dataset.from_generator(generate_c4)
 dataset.shuffle()
-dataset.push_to_hub("Aeonium/the-data")
+dataset.push_to_hub("Aeonium/the-data", token=os.environ.get("HUGGINGFACE_TOKEN"))
