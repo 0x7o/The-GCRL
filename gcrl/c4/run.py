@@ -20,7 +20,7 @@ if not os.path.exists(output_dir):
 
 
 def main():
-    for chunk_num in tqdm(range(4096)):
+    for chunk_num in tqdm(range(2327, 4096)):
         if os.path.exists(os.path.join(output_dir, f"c4-cleaned-{chunk_num:05}.json")):
             continue
 
